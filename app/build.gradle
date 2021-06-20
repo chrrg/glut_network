@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "cn.edu.glut.yiban.glut_network"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 3
+        versionName "1.2"
+        resConfigs "zh-rCN", "zh-rHK", "zh-rTW", "en"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true // true - 打开资源压缩
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+//    androidTestImplementation 'androidx.test:runner:1.2.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okio:okio:2.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}
